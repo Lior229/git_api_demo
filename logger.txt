@@ -1,0 +1,28 @@
+19/07/2023, 19:25:40 	 Route /api/search?keyword=lior not exist
+----------------------------
+19/07/2023, 19:54:42 	 Request failed with status code 422
+----------------------------
+19/07/2023, 20:06:55 	 Route /api/search?keyword=lior not exist
+----------------------------
+19/07/2023, 20:07:13 	 Request failed with status code 422
+----------------------------
+19/07/2023, 20:08:27 	 Request failed with status code 422
+----------------------------
+19/07/2023, 20:11:09 	 Request failed with status code 422
+----------------------------
+19/07/2023, 20:11:27 	 Request failed with status code 422
+----------------------------
+19/07/2023, 20:16:50 	 Request failed with status code 422
+----------------------------
+19/07/2023, 20:47:08 	 Request failed with status code 422
+----------------------------
+19/07/2023, 21:14:44 	 Request failed with status code 422
+----------------------------
+19/07/2023, 21:27:51 	 response.data.map is not a function
+----------------------------
+21/07/2023, 10:25:57 	 response.data.json is not a function
+----------------------------
+21/07/2023, 11:07:14 	 Cannot read properties of undefined (reading 'forEach')
+----------------------------
+21/07/2023, 20:01:50 	 Unauthorized
+----------------------------
