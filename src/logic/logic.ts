@@ -11,12 +11,12 @@ export const searchRepository =async (keyword:string):Promise<Repository[]> => {
         const { data } = await axios.get(`${GIT_API_URL}`)
         const { items } = data
 
+        // extract git api response as my repository object
         let repositories: Repository[] = []
-
-            for (const item in items) {
-                const repository = new Repository(items[item].id, items[item].name, items[item].owner.avatar_url)
-                repositories.push(repository)
-            }
+        for (const item in items) {
+            const repository = new Repository(items[item].id, items[item].name, items[item].owner.avatar_url)
+            repositories.push(repository)
+        }
 
         return new Promise((resolve, reject) => {
             resolve(repositories)

@@ -24,7 +24,6 @@ declare global {
     jwt.verify(token, `${process.env.SECRET_KEY}`, (err) => {
         if (err) {
             // JWT is invalid, return an error response
-            console.log('Unauthorized');
             const error = new UnauthorizedError('Unauthorized');
             next(error);
         } else {
