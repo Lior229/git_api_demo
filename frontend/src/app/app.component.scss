@@ -2,7 +2,7 @@
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(6,1fr);
-    grid-template-rows: 20% 70% 5%;
+    grid-template-rows: 10% 85% 5%;
 
     header, main, footer{
         grid-column: span 6;

@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataService} from './services/data.service'
+import { AuthService } from './services/auth.service';
 import Repository from './models/Repository';
 import User from './models/User';
 
@@ -15,15 +16,14 @@ export class AppComponent implements OnInit{
   public reposetories:Repository[] = [];
   public user:User = {token:'',bookmark:[]}
 
-  public constructor(private dataService:DataService){
+  public constructor(private dataService:DataService, private authService: AuthService ){
   }
 
   async ngOnInit(): Promise<void> {
-    if (!this.user.token) {
+    if (!this.authService.getCurrentUser()) {
       try {
-        this.user.token = await this.dataService.generetToken();
-        console.log(this.user);
-        
+        this.user.token = await this.dataService.generetToken(); 
+        this.authService.login(this.user)
        }catch(err:any){
         console.log(err.message)
        }
@@ -35,9 +35,10 @@ export class AppComponent implements OnInit{
 
   public async searchReposetory():Promise<void>{
     try {
-      this.reposetories = await this.dataService.searchGitRepository(this.textToSearchRef.nativeElement.value)
-      console.log(this.reposetories);
+      console.log("searchReposetory",this.user);
       
+      this.reposetories = await this.dataService.searchGitRepository(this.textToSearchRef.nativeElement.value,this.user)
+      console.log(this.reposetories);
      }catch(err:any){
       console.log(err.message)
      }

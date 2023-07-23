@@ -6,7 +6,7 @@ import verifyToken from "../middleware/verify-logged-in";
 const router = express.Router();
 
 // GET http://localhost:3005/api/search/:keyword
-router.get("/search/:keyword", async (request: Request, response: Response, next: NextFunction) => {
+router.get("/search/:keyword",verifyToken, async (request: Request, response: Response, next: NextFunction) => {
     try {
         const keyword = request.params.keyword    
         const repositories  = await searchRepository(keyword)

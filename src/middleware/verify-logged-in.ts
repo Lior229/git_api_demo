@@ -13,7 +13,6 @@ declare global {
  const verifyToken = async (request: Request, response: Response, next: NextFunction) => {
     //get the jwt from the authorization header
     const token = request.headers.authorization?.split(' ')[1];
-
     if (!token) {
         const error = new UnauthorizedError('Unauthorized');
         next(error);
