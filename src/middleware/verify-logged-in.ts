@@ -18,10 +18,14 @@ declare global {
         next(error);
         return;
     }
+    console.log('thetoken', token);
+    
 
     // verify the jwt
     jwt.verify(token, `${process.env.SECRET_KEY}`, (err) => {
         if (err) {
+            console.log('verify error', err);
+            
             // JWT is invalid, return an error response
             const error = new UnauthorizedError('Unauthorized');
             next(error);

@@ -1,4 +1,12 @@
 <div class="home">
-    <h1>home works!</h1>
+    <div class="row">
+        <div class="col-sm-2 card" *ngFor="let reposetry of list">
+                <div class="position-absolute top-0 end-0">
+                    <button type="button" id={{reposetry.id}}>Bookmark</button>
+                </div>
+                <img src={{reposetry.avatar_url}} alt={{reposetry.name}}>
+                <h5 class="card-title">{{reposetry.name}}</h5>
+        </div>
+    </div>
 </div>
 

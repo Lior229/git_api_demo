@@ -24,10 +24,4 @@ export class DataService {
         const repositories = await firstValueFrom(observable);
         return repositories;
     }
-
-    public async generetToken():Promise<string>{
-        const observable = this.http.get<string>(`${this.baseUrl}/generateToken`);
-        const token = await firstValueFrom(observable);
-        return token;
-    }
 }
