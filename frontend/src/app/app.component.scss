@@ -1,8 +1,9 @@
 .layout{
     height: 100vh;
+    max-width: 100vw;
     display: grid;
     grid-template-columns: repeat(6,1fr);
-    grid-template-rows: 10% 85% 5%;
+    grid-template-rows: 5% 90% 5%;
 
     header, main, footer{
         grid-column: span 6;

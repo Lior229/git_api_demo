@@ -14,17 +14,12 @@
               <a class="nav-link" href="/bookmark">Bookmark</a>
             </li>
           </ul>
-          <div class="d-flex">
-            <input #textToSearchRef id="textToSearch" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark" (click)="searchReposetory()">Search</button>
-          </div>
         </div>
       </div>
     </nav>
   </header>
   <main>
-    <!-- <router-outlet></router-outlet> -->
-    <app-home [list]="reposetories"></app-home>
+    <router-outlet></router-outlet>
   </main>
   <footer>footer</footer>
 </div>

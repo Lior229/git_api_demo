@@ -1,0 +1,13 @@
+<div class="reposetries-list">
+    <div class="row justify-content-center ">
+        <div class="card col-4 col-sm-2 text-center" *ngFor="let reposetry of reposetriesList">
+            <img src={{reposetry.avatar_url}} alt={{reposetry.name}} class="card-img-top">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{reposetry.name}}</h5>
+                <button class="btn btn-primary" (click)="bookmark(reposetry.id)">Bookmark</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

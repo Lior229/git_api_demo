@@ -1,12 +1,19 @@
 <div class="home">
-    <div class="row">
-        <div class="col-sm-2 card" *ngFor="let reposetry of list">
-                <div class="position-absolute top-0 end-0">
-                    <button type="button" id={{reposetry.id}}>Bookmark</button>
-                </div>
-                <img src={{reposetry.avatar_url}} alt={{reposetry.name}}>
-                <h5 class="card-title">{{reposetry.name}}</h5>
+    <div class="row justify-content-center align-items-center">
+        <div class="col-auto">
+            <input #textToSearchRef (input)="textToSearch=textToSearchRef.value" (keyup.enter)="search()" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         </div>
+        <div class="col-auto">
+            <button [disabled]="textToSearch.length===0" class="btn btn-primary" (click)="search()">Search</button>
+        </div>
+    </div>
+    <div [hidden]="!isLoading" class="row justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="row justify-content-center" [hidden]="reposetories.length===0">
+        <app-reposetoris-list [reposetriesList]="reposetories"></app-reposetoris-list>
     </div>
 </div>
 

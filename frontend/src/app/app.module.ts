@@ -7,12 +7,16 @@ import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReposetorisListComponent } from './components/reposetoris-list/reposetoris-list.component';
+import { BookmarkComponent } from './components/bookmark/bookmark.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ReposetorisListComponent,
+    BookmarkComponent
   ],
   imports: [
     BrowserModule,
