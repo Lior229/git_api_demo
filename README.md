@@ -1,6 +1,6 @@
 # Requirements:
 
-* [Nodejs](https://nodejs.org/en) installed
+* [Nodejs](https://nodejs.org/en) installed on your system
 * Angular cli  ```npm install -g @angular/cli```
 
 # Instructions:
