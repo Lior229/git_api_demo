@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
 })
 
 export class ReposetorisListComponent implements OnInit{
-  @Input() reposetriesList:Repository[] = [];
+  @Input() repositoriesList:Repository[] = [];
   private user:User = {token:'',bookmark:[]};
   bookmarkId = 0
   
@@ -30,10 +30,10 @@ export class ReposetorisListComponent implements OnInit{
     }
   }
 
-  public bookmark(reposetryId:string) {
-    const reposetory = this.reposetriesList.find((repo)=>{return repo.id === reposetryId})
-    if (reposetory) {
-      this.authService.addBookmark(reposetory)
+  public bookmark(repositoryId:string) {
+    const repository = this.repositoriesList.find((repo)=>{return repo.id === repositoryId})
+    if (repository) {
+      this.authService.addBookmark(repository)
     }
   }
 }

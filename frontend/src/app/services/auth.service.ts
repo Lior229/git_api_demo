@@ -45,10 +45,10 @@ export class AuthService {
   }
 
 
-  public addBookmark(reposetry:Repository) {
-    const reposetory = this.user.bookmark.find((repo)=>{return repo.id === reposetry.id})
-    if (!reposetory) {
-      this.user.bookmark.push(reposetry)
+  public addBookmark(repository:Repository) {
+    const duplicateBookmark = this.user.bookmark.find((repo)=>{return repo.id === repository.id})
+    if (!duplicateBookmark) {
+      this.user.bookmark.push(repository)
       sessionStorage.setItem(this.userKey, JSON.stringify(this.user));
       this.userSubject.next(this.user)
     }

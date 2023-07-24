@@ -3,9 +3,9 @@
     max-width: 100vw;
     display: grid;
     grid-template-columns: repeat(6,1fr);
-    grid-template-rows: 5% 90% 5%;
+    grid-template-rows: 5% 93%;
 
-    header, main, footer{
+    header, main{
         grid-column: span 6;
     }
 }

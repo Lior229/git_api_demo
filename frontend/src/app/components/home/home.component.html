@@ -4,7 +4,7 @@
             <input #textToSearchRef (input)="textToSearch=textToSearchRef.value" (keyup.enter)="search()" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         </div>
         <div class="col-auto">
-            <button [disabled]="textToSearch.length===0" class="btn btn-primary" (click)="search()">Search</button>
+            <button [disabled]="textToSearch.length===0 || isLoading" class="btn btn-primary" (click)="search()">Search</button>
         </div>
     </div>
     <div [hidden]="!isLoading" class="row justify-content-center">
@@ -12,8 +12,8 @@
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
-    <div class="row justify-content-center" [hidden]="reposetories.length===0">
-        <app-reposetoris-list [reposetriesList]="reposetories"></app-reposetoris-list>
+    <div class="row justify-content-center" [hidden]="repositories.length===0">
+        <app-reposetoris-list [repositoriesList]="repositories"></app-reposetoris-list>
     </div>
 </div>
 

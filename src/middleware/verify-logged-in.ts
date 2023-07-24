@@ -18,7 +18,6 @@ declare global {
         next(error);
         return;
     }
-    console.log('thetoken', token);
     
 
     // verify the jwt

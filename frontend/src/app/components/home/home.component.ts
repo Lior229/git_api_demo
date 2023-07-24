@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit{
   private user:User = {token:'',bookmark:[]};
   isLoading = false
   textToSearch =""
-  @Output() reposetories:Repository[] = [];
+  @Output() repositories:Repository[] = [];
 
   public constructor(private dataService:DataService, private authService: AuthService ){
   }
@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit{
   }
 
   public async search():Promise<void>{
-    if (this.textToSearch.length > 0) {
-      this.reposetories = [];
+    if (this.textToSearch.length > 0 && !this.isLoading) {
+      this.repositories = [];
       this.isLoading = true;
       try {
           await this.searchReposetory()
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit{
 
   private async searchReposetory():Promise<void>{
     try {
-      this.reposetories = await this.dataService.searchGitRepository(this.textToSearch,this.user)  
+      this.repositories = await this.dataService.searchGitRepository(this.textToSearch,this.user)  
      }catch(err:any){
       console.log(err.message)
      }

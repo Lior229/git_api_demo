@@ -3,6 +3,6 @@
     <div *ngIf="bookmarks.length===0; then thenBlock else elseBlock"></div>
     <ng-template #thenBlock><p>dont have any bookmarks to display</p></ng-template>
     <ng-template #elseBlock>
-        <app-reposetoris-list [reposetriesList]="bookmarks"></app-reposetoris-list>
+        <app-reposetoris-list [repositoriesList]="bookmarks"></app-reposetoris-list>
     </ng-template>
 </div>
